@@ -149,7 +149,8 @@ def main():
     lines: list[Line] = []
 
     # Iterate through directory and find all pdf files
-    for file in os.listdir("input"):
+    items = sorted(os.listdir("input"))
+    for file in items:
         # Process PDF
         if file.endswith(".pdf"):
             lines.extend(process_pdf("input/" + file))
